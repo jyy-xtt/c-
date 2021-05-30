@@ -1,37 +1,28 @@
 #define _CRT_SECURE_NO_WARNINGS
-
 #include<stdio.h>
 
-int max(int a, int b) {
-
-	if (a > b) {
-
-		return a;
-
-	}
-
-	else {
-
-		return b;
-
-	}
-
-}
-
 int main()
-
 {
-
 	int a = 0;
-
 	int b = 0;
-
-	scanf("%d %d", &a, &b);
-
-	int c = max(a, b);
-
-	printf("%d\n", c);
-
+	int c = 0;
+	int d = 0;
+	scanf("%d %d %d", &a, &b, &c);
+	if (a < b) {
+		d = b;
+		b = a;
+		a = d;
+	}
+	if (a < c) {
+		d = c;
+		c = a;
+		a = d;
+	}
+	if (b < c) {
+		d = c;
+		c = b;
+		b = d;
+	}
+	printf("%d %d %d\n", a, b, c);
 	return 0;
-
 }
